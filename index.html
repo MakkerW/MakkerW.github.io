@@ -9,31 +9,78 @@
 <body>
     <header>
         <h1>Mark Welin</h1>
-        <p>Machine Learning Engineer | AI Researcher</p>
+        <p>Machine Learning Engineer | AI Researcher | Problem-Solver</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#papers">Research Papers</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I'm a Human-Centered AI student at DTU with a background in Mathematics and Data Science. Passionate about AI ethics, deep learning, and problem-solving.</p>
+        <p>I'm a Human-Centered AI student at DTU with a strong background in Mathematics, Data Science, and Machine Learning. Passionate about AI ethics, deep learning, and problem-solving. Fluent in Danish and English, with working knowledge of French.</p>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
+        <div class="project">
+            <h3>Neural Network Classifier</h3>
+            <p>A deep learning classifier using PyTorch, trained on structured data for binary classification.</p>
+            <a href="https://github.com/MakkerW/your-project" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Cryptography with Elliptic Curves</h3>
+            <p>Research project on elliptic curve cryptography, focusing on secure encryption methods.</p>
+            <a href="https://github.com/MakkerW/another-project" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section id="papers">
+        <h2>Research Papers</h2>
+        <input type="file" id="upload" accept="application/pdf">
+        <ul id="paper-list"></ul>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <h3>Ballerup Kommune</h3>
+        <p><strong>Student Helper in Digitisation Department (2021–Present)</strong></p>
         <ul>
-            <li><a href="https://github.com/MakkerW/your-project">Neural Network Classifier</a> - A deep learning project using PyTorch.</li>
-            <li><a href="https://github.com/MakkerW/another-project">Cryptography with Elliptic Curves</a> - Research project on cryptography.</li>
+            <li>Maintained and updated the municipality’s online forms using Drupal.</li>
+            <li>Led the transition from outdated manual processes to digital solutions.</li>
+        </ul>
+        <h3>University of Copenhagen</h3>
+        <p><strong>Teaching Assistant (2022-2023)</strong></p>
+        <ul>
+            <li>Graded assignments and assisted students in mathematics courses.</li>
+            <li>Contributed to curriculum discussions for improvement.</li>
         </ul>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:welinmark@email.com">welinmark@email.com</a></p>
-        <p>GitHub: <a href="https://github.com/MakkerW">github.com/MakkerW</a></p>
+        <p>GitHub: <a href="https://github.com/MakkerW" target="_blank">github.com/MakkerW</a></p>
     </section>
 
     <footer>
         <p>&copy; 2024 Mark Welin</p>
     </footer>
+
+    <script>
+        document.getElementById('upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<a href="${URL.createObjectURL(file)}" target="_blank">${file.name}</a>`;
+                document.getElementById('paper-list').appendChild(listItem);
+            }
+        });
+    </script>
 </body>
 </html>
-
